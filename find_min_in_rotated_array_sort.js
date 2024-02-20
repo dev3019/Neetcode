@@ -3,14 +3,20 @@
  * @return {number}
  */
 var findMin = function(nums) {
-    let temp=Infinity
-    for(let i=nums.length-1;i>=0;i--){
-      if(temp!==Math.max(temp, nums[i])){
-        return temp
-      }
-      temp = nums.pop()
+  let left = 0;
+    let right = nums.length - 1;
+
+    while (left < right) {
+        const mid = Math.floor((left + right) / 2);
+        console.log(nums[mid],nums[right])
+        if (nums[mid] > nums[right]) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
     }
-    return temp
+
+    return nums[left];
 };
 
 console.log(findMin([3,4,5,1,2]))
