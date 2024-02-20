@@ -10,9 +10,9 @@ var search = function(nums, target) {
     }
     else{
       const mid = Math.floor((left+right)/2)
-      if(tar===nums[mid]){
+      if(tar===arr[mid]){
         return mid
-      }else if (tar<nums[mid]){
+      }else if (tar<arr[mid]){
         return binary_search(arr, tar, left, mid-1)
       }else{
         return binary_search(arr, tar, mid+1, right)
